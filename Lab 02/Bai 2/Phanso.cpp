@@ -24,6 +24,11 @@ void PhanSo::Xuat() {
 }
 
 void PhanSo::RutGon() {
+    if (iMau < 0) {            // Neu mau so < 0 thi chuyen dau tru len tu so
+        iTu *= -1;             // va neu ca mau va tu deu am thi chuyen lai thanh phan so duong
+        iMau *= -1;
+    }
+
     if (iTu > 0) {              // Neu phan so duong
         for (int i = min(iTu,iMau);i > 1;i--) {         // Tim uoc chung lon nhat
             if (iTu % i == 0 and iMau % i == 0) {       // Chia ca tu va mau cho uoc chung lon nhat
@@ -80,7 +85,7 @@ void PhanSo::SoSanh(PhanSo a,PhanSo b) {                // Input: 2 phan so
     PhanSo quydongb;
 
     // Quy dong phan so a
-    quydonga.iTu = a.iTu * b.iMau;  
+    quydonga.iTu = a.iTu * b.iMau;                      
     quydonga.iMau = a.iMau * b.iMau;
 
     // Quy dong phan so b
