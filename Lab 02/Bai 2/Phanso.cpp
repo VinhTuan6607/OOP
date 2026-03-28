@@ -18,6 +18,7 @@ void PhanSo::Nhap() {
 }
 
 void PhanSo::Xuat() {
+    if (iMau == 0) {cout << "LOI!";return;}   // Neu mau so bang 0 thi se bi loi
     if (iTu == 0) {cout << 0;return;}         // Neu tu so bang 0 thi phan so bang 0
     if (iMau == 1) {cout << iTu;return;}      // Neu mau so bang 1 thi phan so bang tu so
     cout << iTu << "/" << iMau;
